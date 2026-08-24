@@ -1,5 +1,3 @@
-
-
 #  DocForensics: Multi-Layer Digital Document Forensics Engine
 
 An enterprise-grade document tamper detection and provenance auditing engine designed for automated KYC compliance, loan verification, and fraud prevention pipelines. 
@@ -30,13 +28,11 @@ DocForensics detects image manipulation, text splicing, and Generative AI inpain
                                 ▼                             ▼
                     Calibrated Risk Metric (0-100%)    Tamper Heatmaps (Base64)
                     Low / Medium / High Risk Verdict    QR Integrity Records
-
-
 ```
 
 ---
 
-## Key Forensic Layers
+##  Key Forensic Layers
 
 1. **Vision Transformer (ViT) Classifier:** Scans local pixel structures for synthetic diffusion artifacts and deepfake generation patterns.
 2. **Laplacian 2nd-Derivative Noise Filter:** Computes high-frequency sensor noise continuity across the document surface, identifying smooth "dead zones" left by AI inpainting and Photoshop clone tools.
@@ -47,9 +43,9 @@ DocForensics detects image manipulation, text splicing, and Generative AI inpain
 
 ---
 
-## Performance & Benchmarks
+##  Performance & Benchmarks
 
-* **Inference Latency:** $< 1.2$ seconds per document audit on CPU ($< 300\text{ ms}$ on CUDA GPU).
+* **Inference Latency:** < 1.2 seconds per document audit on CPU (< 300 ms on CUDA GPU).
 * **Format Flexibility:** Supports JPEG, PNG, and JFIF document photographs and digital captures.
 * **Architecture:** Decoupled FastAPI backend serving JSON verification reports and Base64-encoded visual heatmaps.
 
@@ -74,28 +70,19 @@ document-forensics/
 ├── requirements.txt                # Project dependencies
 ├── .gitignore                      # Git artifact filter
 └── README.md                       # Documentation
-
 ```
 
 ---
 
-## Installation & Quickstart
-
-### Prerequisites
-
-* Python 3.10+
-* Git
+##  Installation & Quickstart
 
 ### 1. Clone the Repository
-
 ```bash
 git clone [https://github.com/](https://github.com/)<YOUR-USERNAME>/<YOUR-REPO-NAME>.git
 cd document-forensics
-
 ```
 
 ### 2. Create and Activate Virtual Environment
-
 ```bash
 # Windows
 python -m venv venv
@@ -104,39 +91,30 @@ python -m venv venv
 # Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
-
 ```
 
 ### 3. Install Dependencies
-
 ```bash
 pip install -r requirements.txt
-
 ```
 
 ### 4. Run the FastAPI Server
-
 ```bash
 uvicorn api:app --reload --port 8000
-
 ```
-
 API Documentation and interactive Swagger UI will be available at `http://localhost:8000/docs`.
 
 ---
 
-## 📡 REST API Reference
+##  REST API Reference
 
 ### `POST /api/v1/analyze`
-
 Submits a document image for multi-layer forensic evaluation.
 
 **Request:** `multipart/form-data`
-
 * `file`: Image file (JPG, PNG, JFIF)
 
 **Sample JSON Response:**
-
 ```json
 {
   "verdict": "HIGH_RISK_FORGERY",
@@ -177,15 +155,21 @@ Submits a document image for multi-layer forensic evaluation.
     "fft_base64": "<base64_string>"
   }
 }
-
 ```
 
 ---
 
+##  Contributing
+
+Contributions are welcome! If you would like to improve the forensic engines or expand file format support (e.g., native PDF stream parsing):
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/forensic-engine-upgrade`).
+3. Commit your changes (`git commit -m 'feat: added new noise analysis module'`).
+4. Push to the branch (`git push origin feature/forensic-engine-upgrade`).
+5. Open a Pull Request.
+
+---
+
 ##  Security & Privacy Notice
-
 This pipeline operates purely locally or in private VPC instances. No document data, image buffers, or EXIF metadata are transmitted to external cloud APIs during inference.
-
-```
-
-```
