@@ -36,7 +36,7 @@ DocForensics detects image manipulation, text splicing, and Generative AI inpain
 
 ---
 
-## ⚡ Key Forensic Layers
+## Key Forensic Layers
 
 1. **Vision Transformer (ViT) Classifier:** Scans local pixel structures for synthetic diffusion artifacts and deepfake generation patterns.
 2. **Laplacian 2nd-Derivative Noise Filter:** Computes high-frequency sensor noise continuity across the document surface, identifying smooth "dead zones" left by AI inpainting and Photoshop clone tools.
@@ -47,7 +47,7 @@ DocForensics detects image manipulation, text splicing, and Generative AI inpain
 
 ---
 
-## 🚀 Performance & Benchmarks
+## Performance & Benchmarks
 
 * **Inference Latency:** $< 1.2$ seconds per document audit on CPU ($< 300\text{ ms}$ on CUDA GPU).
 * **Format Flexibility:** Supports JPEG, PNG, and JFIF document photographs and digital captures.
@@ -55,7 +55,7 @@ DocForensics detects image manipulation, text splicing, and Generative AI inpain
 
 ---
 
-## 🛠️ Project Structure
+##  Project Structure
 
 ```text
 document-forensics/
@@ -79,7 +79,7 @@ document-forensics/
 
 ---
 
-## ⚙️ Installation & Quickstart
+## Installation & Quickstart
 
 ### Prerequisites
 
@@ -182,7 +182,7 @@ Submits a document image for multi-layer forensic evaluation.
 
 ---
 
-## 🔒 Security & Privacy Notice
+##  Security & Privacy Notice
 
 This pipeline operates purely locally or in private VPC instances. No document data, image buffers, or EXIF metadata are transmitted to external cloud APIs during inference.
 
