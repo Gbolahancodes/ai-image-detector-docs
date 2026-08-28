@@ -1,3 +1,4 @@
+import streamlit as st
 from ui.dashboard import render_dashboard
 
 if __name__ == "__main__":
